@@ -1,0 +1,124 @@
+	{
+		// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+		// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+		// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+		// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+		// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+		// Placeholders with the same ids are connected.
+		// Example:
+		"Print to console": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-clg",
+			"body": [
+				"console.log('$1 ($2) ==>', $1);",
+				""
+			],
+			"description": "Log output to console"
+		},
+		"Snippet Title": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "demoSnippet",
+			"body": [
+				"",
+				"",
+				""
+			],
+			"description": "Log output to console"
+		},
+		"Arrow Function": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-arrfunction",
+			"body": [
+				"const $1 = () => {",
+				"\t$0",
+				"\treturn \"\"",
+				"}"
+			],
+			"description": "Log output to console"
+		},
+		"Elint Disable no-unused vars for File": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-nounusedvars-eslint",
+			"body": [
+				"/* eslint-disable @typescript-eslint/no-unused-vars */"
+			],
+			"description": "Log output to console"
+		},
+		"Elint Disable for File": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-eslintdisable",
+			"body": [
+				"/* eslint-disable */"
+			],
+			"description": "Log output to console"
+		},
+		"live debug": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-livedebug",
+			"body": [
+				"<div><pre><b>|--Live-Debug--|</b>{JSON.stringify({}, null, 2)}</pre></div>"
+			],
+			"description": "Log output to console"
+		},
+		"React Componet": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-reactcomponent",
+			"body": [
+				"export const $1 = ({ $2 }) => {",
+				"\t$0",
+				"\treturn (",
+				"\t\t<div>",
+				"\t\t\t",
+				"\t\t</div>",
+				"\t)",
+				"}"
+			],
+			"description": "Log output to console"
+		},
+		"Js Doc": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-docsjs",
+			"body": [
+				"/**",
+				" * $0",
+				" */"
+			],
+			"description": "Log output to console"
+		},
+		"Immediately Invoked Function": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-iif",
+			"body": [
+				"(function () {",
+				"\tvar aName = \"Barry\";",
+				"\t$1",
+				"})();"
+			],
+			"description": "Immediately Invoked Function"
+		},
+		"Immediately Invoked Function Variable": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-iifv",
+			"body": [
+				"let result = (function () {",
+				"\t// * Function body here.",
+				"\tlet name",
+				"\t$1",
+				"\treturn name;",
+				"})();"
+			],
+			"description": "Immediately Invoked Function Variable"
+		},
+		"Comments Prototype from Better Comments ~SahilRajput": {
+			"scope": "javascript,typescript,typescriptreact",
+			"prefix": "sr-commentshint",
+			"body": [
+				"// Just normal comment.",
+				"// ? Things would be cooler now.",
+				"// ! Things will be alert now.",
+				"// * Things would be succeess now.",
+				"// Todo: Things will be yellow now."
+			],
+			"description": "Comments Prototype from Better Comments ~SahilRajput"
+		},
+	}
