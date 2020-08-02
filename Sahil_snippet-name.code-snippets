@@ -25,6 +25,56 @@
 			],
 			"description": "Log output to console"
 		},
+		"Promise Variable": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-promiseVariable",
+			"body": [
+				"const promisedValue = new Promise((res, rej) => {",
+				"\t$1",
+				"\t$2",
+				"\tres()",
+				"\trej()",
+				"})",
+			],
+			"description": "Log output to console"
+		},
+		"Async for await of": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-asyncforawaitof",
+			"body": [
+				"(async function () {",
+				"\tfor await (let num of ${1:someArray}) {}",
+				"\t$2",
+				"\t$3",
+				"})();",
+			],
+			"description": "Log output to console"
+		},
+		"For await of": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-forawaitof",
+			"body": [
+				"for await (let num of ${1:someArray}) {",
+				"\t$2",
+				"\t$3",
+				"};",
+			],
+			"description": "Log output to console"
+		},
+		"Promise returning fuction": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-prf",
+			"body": [
+				"const $1 = ($2) => {",
+				"\treturn new Promise((resolve, reject) => {",
+				"\t\t$3",
+				"\t\tresolve()",
+				"\t\treject()",
+				"\t})",
+				"}",
+			],
+			"description": "Log output to console"
+		},
 		"Arrow Function": {
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
 			"prefix": "sr-arrfunction",
@@ -36,9 +86,17 @@
 			],
 			"description": "Log output to console"
 		},
-		"Elint Disable no-unused vars for File": {
+		"Elint VanillaJS Disable no-unused vars for  File": {
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
-			"prefix": "sr-nounusedvars-eslint",
+			"prefix": "sr-js-nounusedvars-eslint",
+			"body": [
+				"/* eslint-disable no-unused-vars */"
+			],
+			"description": "Log output to console"
+		},
+		"Elint Typescript Disable no-unused vars for File": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-ts-nounusedvars-eslint",
 			"body": [
 				"/* eslint-disable @typescript-eslint/no-unused-vars */"
 			],
