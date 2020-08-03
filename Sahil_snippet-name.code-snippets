@@ -1,4 +1,5 @@
 	{
+		// SAHIL RAJPUT:==>  Use back ticks for clg in snippets coz we don't want ot escape them that way..
 		// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
 		// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
 		// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
@@ -8,9 +9,9 @@
 		// Example:
 		"Print to console": {
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
-			"prefix": "sr-clg",
+			"prefix": "sr-l",
 			"body": [
-				"console.log('$1 ($2) ==>', $1);",
+				"console.log(`${1: variable} (${2: placeIdentifier}) ==>`, $1);",
 				""
 			],
 			"description": "Log output to console"
@@ -25,13 +26,73 @@
 			],
 			"description": "Log output to console"
 		},
+		"Execute Command": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-executeCommand",
+			"body": [
+				"const { exec } = require('child_process');",
+				"exec('${1:someCommand}', (error, stdout, stderr) => {",
+				"\tconsole.log(`\\n••••••STDERR ==>`, stderr);",
+				"\tconsole.log(`••••••STDOUT==>`, stdout);",
+				"\tif (error) return console.error(`••••••ERROR ==>`, error);",
+				"\t//Do something below on successful execution(error being falsy).",
+				"\t// Use stdout to make something from output, on successful execution of the command.",
+				"\t$2",
+				"})",
+				""
+			],
+			"description": "Log output to console"
+		},
+		"Read a file": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-readFile",
+			"body": [
+				"const fs = require(\"fs\")",
+				"fs.readFile(__dirname + '/${1:fileName.txt}', 'utf8', function (err, fileContent) {",
+				"\tif (err) {",
+				"\t\treturn console.log(`File not found.`);",
+				"\t}",
+				"\tconsole.log(`••••••CONTENT OF FILE ==> `, fileContent)",
+				"\t${3://  Use `fileContent` here to access file data.}}",
+				"})",
+				"$0"
+			],
+			"description": "Log output to console"
+		},
+		"Write to file": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-writeFile",
+			"body": [
+				"fs = require('fs');",
+				"const dataToWrite = ${1:`Line1\\nLine2\\nLine3`}",
+				"fs.writeFile(__dirname + '/${2:fileName.txt}', dataToWrite, 'utf8', (err) => (err) && console.log(`Writing to file failed with err =>`, err))",
+				"$3"
+			],
+			"description": "Log output to console"
+		},
 		"Promise Variable": {
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
-			"prefix": "sr-promiseVariable",
+			"prefix": "sr-promiseVar",
 			"body": [
-				"const promisedValue = new Promise((res, rej) => {",
+				"const valueReceived = new Promise((res, rej) => {",
 				"\t$1",
 				"\t$2",
+				"\t// Use resolve and reject calls inside callbacks or some promise.",
+				"\tres()",
+				"\trej()",
+				"})",
+			],
+			"description": "Log output to console"
+		},
+		"Promise Variable with await": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-awaitPromiseVar",
+			"body": [
+				"const valueReceived = await new Promise((res, rej) => {",
+				"\t// You  must use valueReceived inside of async function to make await work.",
+				"\t$1",
+				"\t$2",
+				"\t// Use resolve and reject calls inside callbacks or some promise.",
 				"\tres()",
 				"\trej()",
 				"})",
@@ -43,7 +104,7 @@
 			"prefix": "sr-asyncforawaitof",
 			"body": [
 				"(async function () {",
-				"\tfor await (let num of ${1:someArray}) {}",
+				"\tfor await (let item of ${1:someArray}) {}",
 				"\t$2",
 				"\t$3",
 				"})();",
@@ -66,10 +127,10 @@
 			"prefix": "sr-prf",
 			"body": [
 				"const $1 = ($2) => {",
-				"\treturn new Promise((resolve, reject) => {",
+				"\treturn new Promise((res, rej) => {",
 				"\t\t$3",
-				"\t\tresolve()",
-				"\t\treject()",
+				"\t\tres()",
+				"\t\trej()",
 				"\t})",
 				"}",
 			],
@@ -102,7 +163,7 @@
 			],
 			"description": "Log output to console"
 		},
-		"Elint Disable for File": {
+		"Elint Disable eslint for File": {
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
 			"prefix": "sr-eslintdisable",
 			"body": [
@@ -156,7 +217,7 @@
 		},
 		"Immediately Invoked Function Variable": {
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
-			"prefix": "sr-iifv",
+			"prefix": "sr-iif-variable",
 			"body": [
 				"let result = (function () {",
 				"\t// * Function body here.",
@@ -166,6 +227,50 @@
 				"})();"
 			],
 			"description": "Immediately Invoked Function Variable"
+		},
+		"Immediately Invoked Async Function": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-iif-async",
+			"body": [
+				"(async function () {",
+				"\tvar aName =  await Promise.resolve(`Bary`);",
+				"\t$1",
+				"})();"
+			],
+			"description": "Immediately Invoked Function"
+		},
+		"Immediately Invoked Async Function with Prmoise": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-iif-async-promise",
+			"body": [
+				"(async function () {",
+				"\tvar valueReceived = await new Promise((resolve, reject) => {",
+				"\t\t// Define callback below, and call resolve and reject in that.",
+				"\t$1",
+				"\t});",
+				"\t// Use `valueReceived` below, like console.log(`So, we get the value as ==>`, valueReceived);",
+				"\t$2",
+				"})();",
+			],
+			"description": "Log output to console"
+		},
+		"Immediately Invoked Async Function with Prmoise Example": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-iif-async-promiseEg",
+			"body": [
+				"(async function () {",
+				"\tlet valueReceived = await new Promise((resolve, reject) => {",
+				"\t\t// Define callback below, and call resolve and reject in that.",
+				"\t\tsetTimeout(() => {",
+				"\t\t\tresolve(\"Yikkesss\")",
+				"\t\t\t// or reject('Nikess')",
+				"\t\t}, 1000)",
+				"\t});",
+				"\t// Use \"valueReceived\" below, like console.log(`So, we get the value as ==>`, valueReceived);",
+				"\tconsole.log(`So, we get the value as ==>`, valueReceived)",
+				"})()",
+			],
+			"description": "Log output to console"
 		},
 		"Comments Prototype from Better Comments ~SahilRajput": {
 			"scope": "javascript,typescript,typescriptreact",
