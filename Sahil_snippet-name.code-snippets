@@ -26,6 +26,17 @@
 			],
 			"description": "Log output to console"
 		},
+		"Promise all": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-promiseAll",
+			"body": [
+				"let results = await Promise.all([",
+				"  fetch(url1),",
+				"  fetch(url2),",
+				"]);",
+			],
+			"description": "Log output to console"
+		},
 		"Execute Command": {
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
 			"prefix": "sr-executeCommand",
