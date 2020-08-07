@@ -27,6 +27,22 @@
 			],
 			"description": "Log output to console"
 		},
+		"OtherSnippetsEs7": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-magic",
+			"body": [
+				"// imr => import React",
+				"// imrd => import ReactDOM",
+				"// imrs => import React,useState",
+				"// imrse => import React,useState,useEffect",
+				"// imrn => import moduleName form react-native",
+				"// imbrc => import Route,Switch,NavLink,Link from 'react-router-dom'",
+				"// imbrr => import Route from 'react-router-dom'",
+				"// imbrs => import Switch from 'react-router-dom'",
+				"// usestate => useState snippet",
+			],
+			"description": "Log output to console"
+		},
 		"Promise all": {
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
 			"prefix": "sr-promiseAll",
