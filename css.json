@@ -1,6 +1,6 @@
 {
 	"Snippet Title": {
-		"scope": "css",
+		// "scope": "css", Coz we are already making these snippets for css only.
 		"prefix": "demoSnippet",
 		"body": [
 			"",
@@ -10,7 +10,6 @@
 		"description": "Log output to console"
 	},
 	"General": {
-		"scope": "css",
 		"prefix": "sr-general",
 		"body": [
 			".sfs{",
@@ -24,7 +23,6 @@
 		"description": "Log output to console"
 	},
 	"Disable text selection": {
-		"scope": "css",
 		"prefix": "sr-css-textSelection",
 		"body": [
 			".${1:setClassName} {",
