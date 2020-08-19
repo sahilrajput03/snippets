@@ -1,5 +1,6 @@
 	{
-		//UPDATE: USE global executeable, `snippush` to push the changed files to github. 
+		// UPDATE: USE global executeable, `snippush` to push the changed files to github. 
+		// UPDATE: USE sr-magic snippet to get relevant snippets from es7 snippets(a snippet exetension for vscode).
 		// SAHIL RAJPUT:==>  Use back ticks for clg in snippets coz we don't want ot escape them that way..
 		// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
 		// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
@@ -15,6 +16,56 @@
 				"",
 				"",
 				""
+			],
+			"description": "Log output to console"
+		},
+		"asyncFucntion": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-async-Function",
+			"body": [
+				"async function ${1:Optional}(${2:param}) {",
+				"\t$3",
+				"}"
+			],
+			"description": "Log output to console"
+		},
+		"React hot loader check!!": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-hotLoaderCheck",
+			"body": [
+				"export default function App() {",
+				"\tconst [state, setState] = React.useState(0);",
+				"\tlet myStyle = { textAlign: \"center\" };",
+				"\treturn (",
+				"\t\t<div>",
+				"\t\t\t<h1 style={myStyle} onClick={() => setState(state + 6)}>Click me to increment</h1>",
+				"\t\t\t<h2 style={myStyle}>{state}</h2></div>",
+				"\t);",
+				"}",
+			],
+			"description": "Log output to console"
+		},
+		"Line spacer 4": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-breaker-log-short",
+			"body": [
+				"console.log('--------------');"
+			],
+			"description": "Log output to console"
+		},
+		"Line spacer 3": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-breaker-bold",
+			"body": [
+				"// =========================",
+			],
+			"description": "Log output to console"
+		},
+		"Line spacer 2": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-breaker-light",
+			"body": [
+				"// --------------------------------------------------------",
 			],
 			"description": "Log output to console"
 		},
@@ -39,6 +90,10 @@
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
 			"prefix": "sr-magic",
 			"body": [
+				"// imd => import {  } from 'module'",
+				"// imp => import moduleName from 'module'",
+				"// imn => import 'module'",
+				"// imr => import * as alias from 'module'",
 				"// imr => import React",
 				"// imrd => import ReactDOM",
 				"// imrs => import React,useState",
@@ -48,6 +103,7 @@
 				"// imbrr => import Route from 'react-router-dom'",
 				"// imbrs => import Switch from 'react-router-dom'",
 				"// usestate => useState snippet",
+				""
 			],
 			"description": "Log output to console"
 		},
@@ -137,7 +193,7 @@
 		},
 		"Async for await of": {
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
-			"prefix": "sr-asyncforawaitof",
+			"prefix": "sr-async-ForAwaitOf",
 			"body": [
 				"(async function () {",
 				"\tfor await (let item of ${1:someArray}) {}",
@@ -244,6 +300,7 @@
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
 			"prefix": "sr-iif",
 			"body": [
+				"// Termination of line is very important in statement before the iif, like below, this can cause untrackable issues.",
 				"(function () {",
 				"\tvar aName = \"Barry\";",
 				"\t$1",
@@ -268,6 +325,7 @@
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
 			"prefix": "sr-iif-async",
 			"body": [
+				"// Termination of line is very important in statement before the iif, like below, this can cause untrackable issues.",
 				"(async function () {",
 				"\tvar aName =  await Promise.resolve(`Bary`);",
 				"\t$1",
@@ -279,6 +337,7 @@
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
 			"prefix": "sr-iif-async-promise",
 			"body": [
+				"// Termination of line is very important in statement before the iif, like below, this can cause untrackable issues.",
 				"(async function () {",
 				"\tvar valueReceived = await new Promise((resolve, reject) => {",
 				"\t\t// Define callback below, and call resolve and reject in that.",
@@ -294,6 +353,7 @@
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
 			"prefix": "sr-iif-async-promiseEg",
 			"body": [
+				"// Termination of line is very important in statement before the iif, like below, this can cause untrackable issues.",
 				"(async function () {",
 				"\tlet valueReceived = await new Promise((resolve, reject) => {",
 				"\t\t// Define callback below, and call resolve and reject in that.",
