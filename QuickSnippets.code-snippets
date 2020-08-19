@@ -1,6 +1,8 @@
 	{
 		// UPDATE: USE global executeable, `snippush` to push the changed files to github. 
 		// UPDATE: USE sr-magic snippet to get relevant snippets from es7 snippets(a snippet exetension for vscode).
+		// UPDATE: USE sp in command line from fish shell to go to snippets directory JUST TO KNOW and then use `e` to open file exporer there :) 
+		// 
 		// SAHIL RAJPUT:==>  Use back ticks for clg in snippets coz we don't want ot escape them that way..
 		// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
 		// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
