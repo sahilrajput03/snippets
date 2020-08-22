@@ -1,7 +1,9 @@
 	{
 		// UPDATE: USE global executeable, `snippush` to push the changed files to github. 
-		// UPDATE: USE sr-magic snippet to get relevant snippets from es7 snippets(a snippet exetension for vscode).
 		// UPDATE: USE sp in command line from fish shell to go to snippets directory JUST TO KNOW and then use `e` to open file exporer there :) 
+		// Also, use `go` to browse repo fast via command line by first opening snippets directory LOL, via sp.
+		// 
+		// UPDATE: USE sr-magic snippet to get relevant snippets from es7 snippets(a snippet exetension for vscode).
 		// 
 		// SAHIL RAJPUT:==>  Use back ticks for clg in snippets coz we don't want ot escape them that way..
 		// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
@@ -18,6 +20,64 @@
 				"",
 				"",
 				""
+			],
+			"description": "Log output to console"
+		},
+		"Express Secure Server ": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-expressSecureTemplate",
+			"body": [
+				"const fs = require('fs');",
+				"const https = require('https')",
+				"const express = require('express')",
+				"const key = fs.readFileSync('./mySslConfig/key.pem'), cert = fs.readFileSync('./mySslConfig/cert.pem');",
+				"const app = express(), port = 3000;",
+				"const server = https.createServer({ key: key, cert: cert }, app)",
+				"",
+				"app.get('/', (req, res) => {",
+				"\tres.send('<p style=\"color: orange\">Hello World2!</p>')",
+				"})",
+				"",
+				"server.listen(port, () => {",
+				"\t// This (callback) is only run at the start of the server, and will not execute when requesting any route.",
+				"\tconsole.log(`INFO: Express server @ http: //localhost:`, port)",
+				"})",
+				"// _____ Toggle via gutter to fold below comments.",
+				"\t// Note: You need to browse: httpS://localhost:3000/",
+				"\t// src: https://medium.com/@nitinpatel_20236/how-to-create-an-https-server-on-localhost-using-express-366435d61f28",
+				"\t// _____",
+				"\t// command1: openssl req -x509 -newkey rsa:2048 -keyout keytmp.pem -out cert.pem -days 365",
+				"\t// Generates the cert.pem and keytmp.pem file.",
+				"\t// _____",
+				"\t// command2: openssl rsa -in keytmp.pem -out key.pem",
+				"\t// Generates the key.pem file.",
+			],
+			"description": "Log output to console"
+		},
+		"Express Server": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-expressTemplate",
+			"body": [
+				// Official express docs example.
+				"const express = require('express'), app = express(), port = 3001",
+				"",
+				"app.get('/', (req, res) => {",
+				"\tres.send('<p style=\"color: orange\">Hello World!</p>')",
+				"})",
+				"",
+				"app.listen(port, () => {",
+				"\t// This (callback) is only run at the start of the server, and will not execute when requesting any route.",
+				"  console.log(`INFO: Express server @ http: //localhost:`, port)",
+				"})",
+				""
+			],
+			"description": "Log output to console"
+		},
+		"Terminal Spacer": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-spacer-terminal",
+			"body": [
+				"for (let i = 0; i < 10; i++) { console.log('\\n')}"
 			],
 			"description": "Log output to console"
 		},
