@@ -47,7 +47,7 @@
 				"\t// src: https://medium.com/@nitinpatel_20236/how-to-create-an-https-server-on-localhost-using-express-366435d61f28",
 				"\t// _____",
 				"\t// command1: openssl req -x509 -newkey rsa:2048 -keyout keytmp.pem -out cert.pem -days 365",
-				"\t// Generates the cert.pem and keytmp.pem file.",
+				"\t// Generates the cert.pem and keytmp.pem file.(Setting password is must)",
 				"\t// _____",
 				"\t// command2: openssl rsa -in keytmp.pem -out key.pem",
 				"\t// Generates the key.pem file.",
