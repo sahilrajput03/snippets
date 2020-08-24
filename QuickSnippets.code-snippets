@@ -23,6 +23,15 @@
 			],
 			"description": "Log output to console"
 		},
+		"My qucik console.log, Yikess!!": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "clg",
+			"body": [
+				"console.log(`$1`)",
+				""
+			],
+			"description": "My qucik console.log, Yikess!!"
+		},
 		"Express Secure Server ": {
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
 			"prefix": "sr-expressSecureTemplate",
