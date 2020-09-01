@@ -23,6 +23,33 @@
 			],
 			"description": "Log output to console"
 		},
+		"global 'require' for elint": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-eslint-global-require",
+			"body": [
+				"/* global require */",
+			],
+			"description": "Disables require no-undef warinng for require."
+		},
+		"dollarBracket": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "d",
+			"body": [
+				"${$1}"
+			],
+			"description": "Dollar brackets"
+		},
+		"React Native inline style": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-native-style",
+			"body": [
+				"this was a bad thing, coz using Stylesheet.create directly",
+				"in inline style creates bundling problem for rn-web, so",
+				" better use common methodologies that fits 100% guranteed",
+				"everywhere. Yikes!!"
+			],
+			"description": "React Native inline style"
+		},
 		"My qucik console.log, Yikess!!": {
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
 			"prefix": "clg",
@@ -118,9 +145,10 @@
 		},
 		"Line spacer 4": {
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
-			"prefix": "sr-breaker-log-short",
+			"prefix": "sr-break-console",
 			"body": [
-				"console.log('--------------');"
+				"console.log('________________________________________________');",
+				""
 			],
 			"description": "Log output to console"
 		},
@@ -364,6 +392,16 @@
 				"/**",
 				" * $0",
 				" */"
+			],
+			"description": "Log output to console"
+		},
+		"Jsx Doc": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-docsjsx",
+			"body": [
+				"{/**",
+				"\t* $0",
+				"\t*/}",
 			],
 			"description": "Log output to console"
 		},
