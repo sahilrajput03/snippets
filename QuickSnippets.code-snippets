@@ -23,13 +23,31 @@
 			],
 			"description": "Log output to console"
 		},
+		"React native log": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-rnLog",
+			"body": [
+				"console.warn(JSON.stringify(${1: someObject}, null, 2));",
+			],
+			"description": "Log output to console"
+		},
+		"Arrow callback": {
+			"scope": "javascript,javascriptreact,typescript,typescriptreact",
+			"prefix": "sr-arr",
+			"body": [
+				"($1) => $2",
+			],
+			"description": "arrow function callback"
+		},
 		"global 'require' for elint": {
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
 			"prefix": "sr-eslint-global-require",
 			"body": [
-				"/* global require */",
+				"/* global require module process */",
+				"// Though you SHOULD just set env to node in eslintrc file.",
+				"src: 'https://stackoverflow.com/questions/50894000/eslint-process-is-not-defined'"
 			],
-			"description": "Disables require no-undef warinng for require."
+			"description": "Disables require no-undef warinng for require.",
 		},
 		"dollarBracket": {
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
@@ -43,10 +61,7 @@
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
 			"prefix": "sr-native-style",
 			"body": [
-				"this was a bad thing, coz using Stylesheet.create directly",
-				"in inline style creates bundling problem for rn-web, so",
-				" better use common methodologies that fits 100% guranteed",
-				"everywhere. Yikes!!"
+				"style={[style.$1]}"
 			],
 			"description": "React Native inline style"
 		},
@@ -113,7 +128,7 @@
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
 			"prefix": "sr-spacer-terminal",
 			"body": [
-				"for (let i = 0; i < 10; i++) { console.log('\\n')}"
+				"for (let i = 0; i < 10; i++) { console.log('\\n')};"
 			],
 			"description": "Log output to console"
 		},
@@ -147,8 +162,7 @@
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
 			"prefix": "sr-break-console",
 			"body": [
-				"console.log('________________________________________________');",
-				""
+				"console.log('____________________________________________');",
 			],
 			"description": "Log output to console"
 		},
@@ -366,7 +380,13 @@
 			"scope": "javascript,javascriptreact,typescript,typescriptreact",
 			"prefix": "sr-livedebug",
 			"body": [
-				"<div><pre><b>|--Live-Debug--|</b>{JSON.stringify({}, null, 2)}</pre></div>"
+				"<div style={{textAlign: 'left'}}>",
+				"  <pre>",
+				"    <b>|--Debugging Area(LIVE)--|</b>",
+				"    <br />",
+				"    {JSON.stringify(state, null, 2)}",
+				"  </pre>",
+				"</div>",
 			],
 			"description": "Log output to console"
 		},
